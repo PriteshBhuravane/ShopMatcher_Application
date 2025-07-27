@@ -1,22 +1,22 @@
-import React, { useState, useRef } from 'react';
-import { 
-  StyleSheet, 
-  View, 
-  Text, 
-  TouchableOpacity, 
-  ActivityIndicator, 
-  Platform,
-  TextInput,
+import ImageSearchService from '@/services/ImageSearchService';
+import * as Haptics from 'expo-haptics';
+import * as ImagePicker from 'expo-image-picker';
+import { Stack } from 'expo-router';
+import { Camera } from 'lucide-react-native';
+import React, { useRef, useState } from 'react';
+import {
+  ActivityIndicator,
+  Alert,
   Image,
   KeyboardAvoidingView,
-  Alert
+  Platform,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View
 } from 'react-native';
 import { WebView } from 'react-native-webview';
-import * as ImagePicker from 'expo-image-picker';
-import { Camera } from 'lucide-react-native';
-import { Stack } from 'expo-router';
-import * as Haptics from 'expo-haptics';
-import ImageSearchService from '@/services/ImageSearchService';
 
 // Constants
 const PLATFORMS = [
